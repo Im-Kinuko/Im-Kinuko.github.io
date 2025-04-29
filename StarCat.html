@@ -13,13 +13,23 @@
   <meta property="og:image:type"   content="image/jpeg">
   <meta property="og:image:width"  content="255" >
   <meta property="og:image:height" content="477" >
-  <meta property="og: url"         content="https://im-kinuko.github.io">
+  <meta property="og:url"         content="https://im-kinuko.github.io">
   <!-- meta refresh 也動態設定 -->
-  <meta http-equiv="refresh"      content="0;url=https://im-kinuko.github.io">
 
   <title>準備跳轉…</title>
 </head>
 <body>
   <p>正在為你準備分享資訊並跳轉…</p>
+
+  <script>
+    // 2. 只有「真實使用者」在這裡執行跳轉
+    //    用 location.replace 而非 meta refresh，避免被爬蟲誤判
+    window.addEventListener('load', () => {
+      // 可以加個 delay 讓使用者感覺到 loading
+      setTimeout(() => {
+        window.location.replace('https://im-kinuko.github.io');
+      }, 100); // 0.1 秒
+    });
+  </script>
 </body>
 </html>
