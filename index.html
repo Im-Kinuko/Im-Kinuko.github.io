@@ -3,13 +3,56 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | WebGL-test 0422</title>
+    <title>Unity WebGL Player | WebGL-test 042902</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="https://kit.fontawesome.com/70f01834b2.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="TemplateData/style.css"> -->
+    <style>
+      html, body{
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* 隱藏 Scroll Bar */
+        height: 100%;
+      }
+      #popup{
+        display:none; 
+        position:fixed; 
+        top:50%; 
+        left:50%; 
+        width:300px; 
+        height:200px; 
+        background:rgba(255, 255, 255, 0.4); 
+        border-radius: 25px;
+        z-index:9999;
+        transform: translate(-50%, -50%); /* center it perfectly */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* optional: add nice shadow */
+      }
+      #popup > div{
+        padding: 1rem;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center;
+        height: 90%;
+      }
+      .btn-general{
+        background: none; 
+        border: none; 
+        cursor: pointer;
+      }
+      #close-btn{
+        position: absolute; 
+        top: 5px; 
+        right: 15px; 
+        font-size: 24px;      
+      }
+      #share-btn{
+        font-size: 40px;
+      }
+    </style>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+      <canvas id="unity-canvas" tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -17,12 +60,39 @@
         </div>
       </div>
       <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">WebGL-test 0422</div>
+    </div>
+    <div id="popup">
+      <div>
+        <button class="btn-general" id="share-btn"><i class="fa-brands fa-facebook"></i></button>
+        <button class="btn-general" id="close-btn" onclick="HidePopup()">✖</button>
       </div>
     </div>
+    <script>
+      window.fbAsyncInit = function() {
+         FB.init({
+           appId      : '1273479274344511',
+           xfbml      : true,                // 啟用 XFBML 自動解析
+           version    : 'v22.0'
+         });
+       };
+   
+       // 動態載入 SDK
+       (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/zh_TW/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+     document.getElementById('share-btn').onclick = function() {
+       FB.ui({
+         display: 'popup',
+         method: 'share',
+         href: 'https://developers.facebook.com/docs/',
+       }, function(response){});
+     }
+     </script>
+    
     <script>
 
       var container = document.querySelector("#unity-container");
@@ -38,6 +108,16 @@
       // Modify or remove this function to customize the visually presented
       // way that non-critical warnings and error messages are presented to the
       // user.
+
+      function ShowPopup() {
+        document.getElementById('popup').style.display = 'block';
+
+      }
+    
+      function HidePopup() {
+        document.getElementById('popup').style.display = 'none';
+      }
+
       function unityShowBanner(msg, type) {
         function updateBannerVisibility() {
           warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
@@ -57,14 +137,14 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/DragonCrasher.loader.js";
+      var loaderUrl = buildUrl + "/WebGL Test.loader.js";
       var config = {
-        dataUrl: buildUrl + "/DragonCrasher.data",
-        frameworkUrl: buildUrl + "/DragonCrasher.framework.js",
-        codeUrl: buildUrl + "/DragonCrasher.wasm",
+        dataUrl: buildUrl + "/WebGL Test.data",
+        frameworkUrl: buildUrl + "/WebGL Test.framework.js",
+        codeUrl: buildUrl + "/WebGL Test.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "WebGL-test 0422",
+        productName: "WebGL-test 042902",
         productVersion: "0.1",
         showBanner: unityShowBanner,
       };
@@ -103,8 +183,8 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        canvas.style.width = "100vw";
+        canvas.style.height = "100vh";
       }
 
       loadingBar.style.display = "block";
@@ -116,9 +196,9 @@
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
                 loadingBar.style.display = "none";
-                fullscreenButton.onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
+                // fullscreenButton.onclick = () => {
+                //   unityInstance.SetFullscreen(1);
+                // };
               }).catch((message) => {
                 alert(message);
               });
