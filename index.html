@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | WebGL-test 042902</title>
+    <title>睡神安眠記</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <script src="https://kit.fontawesome.com/70f01834b2.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="TemplateData/style.css"> -->
@@ -68,6 +68,7 @@
       </div>
     </div>
     <script>
+      var result = "StarCat.png"
       window.fbAsyncInit = function() {
          FB.init({
            appId      : '1273479274344511',
@@ -88,7 +89,7 @@
        FB.ui({
          display: 'popup',
          method: 'share',
-         href: 'https://developers.facebook.com/docs/',
+         href: `${location.origin}/share.html?img=${result}`,
        }, function(response){});
      }
      </script>
