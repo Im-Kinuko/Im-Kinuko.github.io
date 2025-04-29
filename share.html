@@ -10,7 +10,7 @@
   <meta property="og:image"       content="">
   <meta property="og:url"         content="https://im-kinuko.github.io">
   <!-- meta refresh 也動態設定 -->
-  <meta http-equiv="refresh"      content="0;url=">
+  <meta http-equiv="refresh"      content="0;url=https://im-kinuko.github.io">
 
   <title>準備跳轉…</title>
 </head>
@@ -44,11 +44,6 @@
       // 動態更新 OG 標籤
       upsertMeta('meta[property="og:image"]',       'content', `${location.origin}/img/${img}`);
 
-
-      // 動態設定 refresh 跳轉
-      upsertMeta('meta[http-equiv="refresh"]', 'content',
-        `0;url=${targetUrl}`
-      );
 
       // 同步更新頁面 title
       document.title = title;
