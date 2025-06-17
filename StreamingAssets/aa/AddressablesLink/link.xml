@@ -1,16 +1,4 @@
 <linker>
-  <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="CountdownManager" preserve="all" />
-    <type fullname="CursorManager" preserve="all" />
-    <type fullname="FadeManager" preserve="all" />
-    <type fullname="MosquitoClickKiller" preserve="all" />
-    <type fullname="MosquitoScoreManager" preserve="all" />
-    <type fullname="MSSpawner" preserve="all" />
-    <type fullname="QuestionManager" preserve="all" />
-    <type fullname="UICursorFollower" preserve="all" />
-    <type fullname="UIMosquitoDrift" preserve="all" />
-    <type fullname="QuestionData" preserve="nothing" serialized="true" />
-  </assembly>
   <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
     <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
   </assembly>
@@ -21,61 +9,19 @@
     <type fullname="UnityEngine.ResourceManagement.ResourceProviders.LegacyResourcesProvider" preserve="all" />
     <type fullname="UnityEngine.ResourceManagement.ResourceProviders.SceneProvider" preserve="all" />
   </assembly>
-  <assembly fullname="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="TMPro.TextMeshProUGUI" preserve="all" />
-    <type fullname="TMPro.TMP_FontAsset" preserve="all" />
-    <type fullname="TMPro.FaceInfo_Legacy" preserve="nothing" serialized="true" />
-    <type fullname="TMPro.FontAssetCreationSettings" preserve="nothing" serialized="true" />
-    <type fullname="TMPro.KerningTable" preserve="nothing" serialized="true" />
-    <type fullname="TMPro.TMP_Character" preserve="nothing" serialized="true" />
-    <type fullname="TMPro.TMP_FontFeatureTable" preserve="nothing" serialized="true" />
-    <type fullname="TMPro.TMP_FontWeightPair" preserve="nothing" serialized="true" />
-    <type fullname="TMPro.VertexGradient" preserve="nothing" serialized="true" />
-  </assembly>
-  <assembly fullname="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="UnityEngine.AudioListener" preserve="all" />
-  </assembly>
   <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="UnityEngine.Camera" preserve="all" />
-    <type fullname="UnityEngine.Cubemap" preserve="all" />
     <type fullname="UnityEngine.GameObject" preserve="all" />
-    <type fullname="UnityEngine.Light" preserve="all" />
-    <type fullname="UnityEngine.LightmapSettings" preserve="all" />
-    <type fullname="UnityEngine.Material" preserve="all" />
     <type fullname="UnityEngine.Object" preserve="all" />
     <type fullname="UnityEngine.RectTransform" preserve="all" />
-    <type fullname="UnityEngine.RenderSettings" preserve="all" />
-    <type fullname="UnityEngine.Shader" preserve="all" />
     <type fullname="UnityEngine.Sprite" preserve="all" />
     <type fullname="UnityEngine.Texture2D" preserve="all" />
-    <type fullname="UnityEngine.Transform" preserve="all" />
     <type fullname="UnityEngine.Events.PersistentCallGroup" preserve="nothing" serialized="true" />
   </assembly>
-  <assembly fullname="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="UnityEngine.Font" preserve="all" />
-  </assembly>
   <assembly fullname="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="UnityEngine.EventSystems.EventSystem" preserve="all" />
-    <type fullname="UnityEngine.EventSystems.StandaloneInputModule" preserve="all" />
-    <type fullname="UnityEngine.UI.Button" preserve="all" />
-    <type fullname="UnityEngine.UI.CanvasScaler" preserve="all" />
-    <type fullname="UnityEngine.UI.GraphicRaycaster" preserve="all" />
     <type fullname="UnityEngine.UI.Image" preserve="all" />
-    <type fullname="UnityEngine.UI.AnimationTriggers" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.UI.Button/ButtonClickedEvent" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.UI.ColorBlock" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.MaskableGraphic/CullStateChangedEvent" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.UI.Navigation" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.UI.SpriteState" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="UnityEngine.Canvas" preserve="all" />
     <type fullname="UnityEngine.CanvasRenderer" preserve="all" />
-  </assembly>
-  <assembly fullname="UnityEngine.TextCoreFontEngineModule">
-    <type fullname="UnityEngine.TextCore.FaceInfo" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.TextCore.Glyph" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.TextCore.GlyphMetrics" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.TextCore.GlyphRect" preserve="nothing" serialized="true" />
   </assembly>
 </linker>
